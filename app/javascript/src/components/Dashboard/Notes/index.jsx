@@ -8,7 +8,7 @@ import notesApi from "apis/notes";
 import EmptyState from "components/Common/EmptyState";
 
 import DeleteAlert from "./DeleteAlert";
-import MenuBar from "./MenuBar";
+import Menu from "./Menu";
 import Note from "./Note";
 import NewNotePane from "./Pane/Create";
 
@@ -45,7 +45,7 @@ const Notes = () => {
 
   return (
     <>
-      <MenuBar showMenu={openMenuBar} />
+      <Menu showMenu={openMenuBar} />
       <Container>
         <Header
           menuBarToggle={() => setOpenMenuBar(openMenuBar => !openMenuBar)}
@@ -89,6 +89,7 @@ const Notes = () => {
         />
         {showDeleteAlert && (
           <DeleteAlert
+            note={notes.filter(note => note.id === selectedNoteId)[0]}
             refetch={fetchNotes}
             selectedNoteId={selectedNoteId}
             setSelectedNoteId={setSelectedNoteId}
