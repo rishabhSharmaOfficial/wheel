@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 
-import { Formik, Form } from "formik";
+import { Formik, Form as FormikForm } from "formik";
 import { Button, Pane } from "neetoui";
-import { Input, Textarea } from "neetoui/formik";
+import { Input, Textarea, Select } from "neetoui/formik";
 
 import notesApi from "apis/notes";
 
-import { NOTES_FORM_VALIDATION_SCHEMA } from "../constants";
+import { NOTES_FORM_VALIDATION_SCHEMA, ASSIGNEES, TAGS } from "../constants";
 
-const NoteForm = ({ onClose, refetch, note, isEdit }) => {
+const Form = ({ onClose, refetch, note, isEdit }) => {
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async values => {
@@ -34,20 +34,41 @@ const NoteForm = ({ onClose, refetch, note, isEdit }) => {
       onSubmit={handleSubmit}
     >
       {({ isSubmitting }) => (
-        <Form className="w-full">
+        <FormikForm className="w-full">
           <Pane.Body className="space-y-6">
             <Input
               required
               className="w-full flex-grow-0"
               label="Title"
               name="title"
+              placeholder="Enter note title"
             />
             <Textarea
               required
               className="w-full flex-grow-0"
               label="Description"
               name="description"
-              rows={8}
+              placeholder="Enter note description"
+              rows={2}
+            />
+            <Select
+              isSearchable
+              required
+              className="w-full flex-grow-0"
+              label="Assigned Contact"
+              name="assignee"
+              options={ASSIGNEES}
+              placeholder="Select Role"
+            />
+            <Select
+              isMulti
+              isSearchable
+              required
+              className="w-full flex-grow-0"
+              label="Tags"
+              name="tags"
+              options={TAGS}
+              placeholder="Select Tags"
             />
           </Pane.Body>
           <Pane.Footer>
@@ -62,10 +83,10 @@ const NoteForm = ({ onClose, refetch, note, isEdit }) => {
             />
             <Button label="Cancel" style="text" onClick={onClose} />
           </Pane.Footer>
-        </Form>
+        </FormikForm>
       )}
     </Formik>
   );
 };
 
-export default NoteForm;
+export default Form;
