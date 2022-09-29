@@ -1,3 +1,4 @@
+import { buildSelectOptions } from "utils";
 import * as yup from "yup";
 
 export const NOTES_FORM_INITIAL_FORM_VALUES = {
@@ -7,39 +8,9 @@ export const NOTES_FORM_INITIAL_FORM_VALUES = {
   tags: [],
 };
 
-export const ASSIGNEES = [
-  {
-    label: "User",
-    value: "user",
-  },
-  {
-    label: "Admin",
-    value: "admin",
-  },
-  {
-    label: "Developer",
-    value: "developer",
-  },
-];
+export const ASSIGNEES = buildSelectOptions(["User", "Admin", "Developer"]);
 
-export const TAGS = [
-  {
-    label: "Create",
-    value: "create",
-  },
-  {
-    label: "Read",
-    value: "read",
-  },
-  {
-    label: "Update",
-    value: "update",
-  },
-  {
-    label: "Delete",
-    value: "delete",
-  },
-];
+export const TAGS = buildSelectOptions(["Create", "Read", "Update", "Delete"]);
 
 export const NOTES_FORM_VALIDATION_SCHEMA = yup.object().shape({
   title: yup.string().required("Title is required"),
