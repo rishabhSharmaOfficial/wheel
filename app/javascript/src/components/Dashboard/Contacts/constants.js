@@ -1,3 +1,33 @@
+import * as yup from "yup";
+
+import { buildSelectOptions } from "utils/index";
+
+export const CONTACTS_FORM_INITIAL_FORM_VALUES = {
+  firstName: "",
+  lastName: "",
+  role: null,
+  email: "",
+};
+
+export const ROLES = buildSelectOptions(["User", "Admin", "developer"]);
+
+export const CONTACTS_FORM_VALIDATION_SCHEMA = yup.object().shape({
+  firstName: yup.string().required("First name is required"),
+  lastName: yup.string().required("Last name is required"),
+  role: yup
+    .object()
+    .nullable()
+    .shape({
+      label: yup.string().oneOf(ROLES.map(tag => tag.label)),
+      value: yup.string().oneOf(ROLES.map(tag => tag.value)),
+    })
+    .required("Role is required"),
+  email: yup
+    .string()
+    .required("Email is required")
+    .email("Email format incorrect"),
+});
+
 export const CONTACTS_LIST = [
   {
     name: "John Smith",
