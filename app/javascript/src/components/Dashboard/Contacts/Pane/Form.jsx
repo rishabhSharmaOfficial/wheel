@@ -70,6 +70,7 @@ const Form = ({ onClose, contact }) => {
               label="Cancel"
               size="large"
               style="text"
+              type="reset"
               onClick={onClose}
             />
           </Pane.Footer>

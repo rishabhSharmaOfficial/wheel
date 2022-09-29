@@ -24,7 +24,7 @@ export const CONTACTS_FORM_VALIDATION_SCHEMA = yup.object().shape({
   email: yup
     .string()
     .required("Email is required")
-    .email("Email format incorrect"),
+    .email("Email should have a valid format"),
 });
 
 export const CONTACTS_LIST = [

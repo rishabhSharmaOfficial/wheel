@@ -5,7 +5,7 @@ import { Typography, Avatar, Dropdown } from "neetoui";
 
 const { Menu, MenuItem } = Dropdown;
 
-export const getContactsTableColumnData = (
+export const buildContactsTableColumnData = (
   setShowDeleteAlert,
   setSelectedContact
 ) => [

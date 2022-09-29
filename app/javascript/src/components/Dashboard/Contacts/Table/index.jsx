@@ -1,12 +1,12 @@
 import React from "react";
 
-import { Table as NeetoTable } from "neetoui";
+import { Table as NeetoUITable } from "neetoui";
 
 import { CONTACTS_LIST } from "../constants";
-import { getContactsTableColumnData } from "../utils";
+import { buildContactsTableColumnData } from "../utils";
 
 const Table = ({ setShowDeleteAlert, setSelectedContact }) => (
-  <NeetoTable
+  <NeetoUITable
     allowRowClick
     pagination
     rowSelection
@@ -14,7 +14,7 @@ const Table = ({ setShowDeleteAlert, setSelectedContact }) => (
     defaultPageSize={5}
     handlePageChange={() => {}}
     rowData={CONTACTS_LIST}
-    columnData={getContactsTableColumnData(
+    columnData={buildContactsTableColumnData(
       setShowDeleteAlert,
       setSelectedContact
     )}
