@@ -1,6 +1,5 @@
+import { buildSelectOptions } from "utils";
 import * as yup from "yup";
-
-import { buildSelectOptions } from "utils/index";
 
 export const NOTES_FORM_INITIAL_FORM_VALUES = {
   title: "",
