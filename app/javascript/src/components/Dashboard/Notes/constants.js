@@ -8,9 +8,20 @@ export const NOTES_FORM_INITIAL_FORM_VALUES = {
   tags: [],
 };
 
-export const ASSIGNEES = buildSelectOptions(["User", "Admin", "Developer"]);
+export const ASSIGNEES = buildSelectOptions([
+  "John Smith",
+  "Ronald Richards",
+  "Sam Smith",
+]);
 
-export const TAGS = buildSelectOptions(["Create", "Read", "Update", "Delete"]);
+export const TAGS = buildSelectOptions([
+  "Getting Started",
+  "Onboarding",
+  "User Flow",
+  "UX",
+  "Bugs",
+  "V2",
+]);
 
 export const NOTES_FORM_VALIDATION_SCHEMA = yup.object().shape({
   title: yup.string().required("Title is required"),

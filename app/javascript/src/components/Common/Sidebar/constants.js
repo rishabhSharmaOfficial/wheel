@@ -13,13 +13,13 @@ export const SIDENAV_LINKS = [
     icon: Notes,
   },
   {
-    label: "Settings",
-    to: "/settings",
-    icon: Settings,
-  },
-  {
     label: "Contacts",
     to: "/contacts",
     icon: UserCircle,
+  },
+  {
+    label: "Settings",
+    to: "/settings",
+    icon: Settings,
   },
 ];
