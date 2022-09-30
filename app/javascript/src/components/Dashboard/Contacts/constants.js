@@ -8,7 +8,7 @@ export const CONTACTS_FORM_INITIAL_FORM_VALUES = {
   email: "",
 };
 
-export const ROLES = buildSelectOptions(["User", "Admin", "developer"]);
+export const ROLES = buildSelectOptions(["Designer", "Admin", "Developer"]);
 
 export const CONTACTS_FORM_VALIDATION_SCHEMA = yup.object().shape({
   firstName: yup.string().required("First name is required"),

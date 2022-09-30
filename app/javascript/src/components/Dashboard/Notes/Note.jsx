@@ -44,7 +44,7 @@ const Note = ({ note, setSelectedNoteId, setShowDeleteAlert }) => (
         <Avatar
           size="small"
           user={{
-            imageUrl: "https://i.pravatar.cc/300",
+            name: "Oliver Smith",
           }}
         />
       </div>

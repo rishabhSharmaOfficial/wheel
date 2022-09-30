@@ -41,14 +41,14 @@ const Form = ({ onClose, refetch, note, isEdit }) => {
               className="w-full flex-grow-0"
               label="Title"
               name="title"
-              placeholder="Enter note title"
+              placeholder="Enter title"
             />
             <Textarea
               required
               className="w-full flex-grow-0"
               label="Description"
               name="description"
-              placeholder="Enter note description"
+              placeholder="Enter description"
               rows={2}
             />
             <Select
@@ -58,7 +58,7 @@ const Form = ({ onClose, refetch, note, isEdit }) => {
               label="Assigned Contact"
               name="assignee"
               options={ASSIGNEES}
-              placeholder="Select Role"
+              placeholder="Select Contact"
             />
             <Select
               isMulti

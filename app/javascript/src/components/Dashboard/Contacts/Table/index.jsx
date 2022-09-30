@@ -9,7 +9,6 @@ const Table = ({ setShowDeleteAlert, setSelectedContact }) => (
   <NeetoUITable
     allowRowClick
     pagination
-    rowSelection
     currentPageNumber={1}
     defaultPageSize={5}
     handlePageChange={() => {}}
