@@ -55,7 +55,6 @@ const Sidebar = () => {
       }}
       profileInfo={{
         name: `${user.first_name} ${user.last_name}`,
-        // imageUrl: "https://i.pravatar.cc/300",
         email: user.email,
         bottomLinks,
       }}
